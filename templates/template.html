@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Form</title>
+    <style>
+        body {
+            background-color: black;
+            background-image: url(bebek.png);
+            font-family: "Montserrat", sans-serif;
+            }
+
+        .outer {
+            background-color:  rgb(236, 236, 236);
+            padding: 10pt 20pt 0pt 20pt;
+            border-radius: 10px;
+            min-width: 660px;
+            min-height: auto;
+            position: absolute; /*Can also be `fixed`*/
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            /*Solves a problem in which the content is being cut when the div is smaller than its' wrapper:*/
+            max-width: 660px;
+            max-height: 1100px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <form action="/" method="post">
+            <div id="forminput">
+                <label for="capitalGain">Silahkan masukan capital gain</label><br>
+                <input id="capitalGain" type="number" name="capitalGain" min="0" max="10000000">
+                <br/><br>
+                <label for="capitalLoss">Silahkan masukan capital loss</label><br>
+                <input id="capitalLoss" type="number" name="capitalLoss" min="0" max="10000000">
+                <br/><br>
+                <label for="incidentHour">Silahkan masukan jam kejadian (Hanya jam nya saja [00-23])</label><br>
+                <input id="incidentHour" type="number" name="incidentHour" min="0" max="23" step="1">
+                <br/><br>
+                <label for="vehicleCount">Silahkan masukan jumlah kendaraan yang terdampak</label><br>
+                <input id="vehicleCount" type="number" name="vehicleCount" min="0" max="10">
+                <br/><br>
+                <label for="witnessesCount">Silahkan masukan jumlah saksi mata</label><br>
+                <input id="witnessesCount" type="number" name="witnessesCount" min="0" max="10">
+                <br/><br>
+                <label for="claimAmount">Silahkan masukan jumlah claim asuransi</label><br>
+                <input id="claimAmount" type="number" name="claimAmount" min="0" max="10000000">
+                <br/><br>
+                <label for="gender">Silahkan masukkan gender pemegang polis</label><br>
+                <input type="radio" id="Male" name="gender" value="male">
+                <label for="Male">Pria</label><br>
+                <input type="radio" id="Female" name="gender" value="female">
+                <label for="Female">Wanita</label><br>
+                <br/><br>
+                <label for="occupation">Silahkan masukan gender pemegang polis</label><br>
+                <select id="occupation" name="occupation">
+                    <option value="adm-clerical">Administratif dan Tata Usaha</option>
+                    <option value="armed-forces">Angkatan Bersenjata</option>
+                    <option value="craft-repair">Perbaikan dan Kerajinan</option>
+                    <option value="exec-managerial">Manajerial Eksekutif</option>
+                    <option value="farming-fishing">Pertanian dan Perikanan</option>
+                    <option value="handlers-cleaners">Pembersih dan Penangan Barang</option>
+                    <option value="machine-op-inspct">Operator Mesin dan Inspeksi</option>
+                    <option value="priv-house-serv">Pelayanan Rumah Tangga</option>
+                    <option value="prof-specialty">Spesialis Profesional</option>
+                    <option value="protective-serv">Pelayanan Perlindungan</option>
+                    <option value="sales">Penjualan</option>
+                    <option value="tech-support">Dukungan Teknis</option>
+                    <option value="transport-moving">Transportasi dan Pengangkutan</option>
+                    <option value="other-service">Pelayanan Lainnya</option>
+                </select>
+                <br/><br>
+                <label for="hobby">Silahkan masukan hobi pemegang polis</label><br>
+                <select id="hobby" name="hobby">
+                    <option value="chess">Catur</option>
+                    <option value="cross-fit">CrossFit</option>
+                    <option value="other">Hobi Lainnya</option>
+                </select>
+                <br/><br>
+                <label for="ageGroup">Silahkan masukan kategori umur pemegang polis</label><br>
+                <select id="ageGroup" name="ageGroup">
+                    <option value="15-20">15-20</option>
+                    <option value="21-25">21-25</option>
+                    <option value="26-30">26-30</option>
+                    <option value="31-35">31-35</option>
+                    <option value="36-40">36-40</option>
+                    <option value="41-45">41-45</option>
+                    <option value="46-50">46-50</option>
+                    <option value="51-55">51-55</option>
+                    <option value="56-60">56-60</option>
+                    <option value="61-65">61-65</option>
+                </select>
+                <br/><br>
+                <label for="incidentType">Silahkan masukan jenis insiden</label><br>
+                <select id="incidentType" name="incidentType">
+                    <option value="Single Vehicle Collision">Kecelakaan Tunggal</option>
+                    <option value="Multi-vehicle Collision">Kecelakaan Beberapa Kendaraan</option>
+                    <option value="Parked Car">Kendaraan Yang Terparkir</option>
+                    <option value="Vehicle Theft">Pencurian Kendaraan</option>
+                </select>
+                <br/><br>
+                <label for="collisionType">Silahkan masukan jenis tubrukan</label><br>
+                <select id="collisionType" name="collisionType">
+                    <option value="Front Collision">Tabrakan Depan</option>
+                    <option value="Rear Collision">Tabrakan Belakang</option>
+                    <option value="Side Collision">Tabrakan Samping</option>
+                    <option value="?">Tidak Diketahui/Tidak Ada</option>
+                </select>
+                <br/><br>
+                <label for="incidentSeverity">Silahkan masukan jenis kerugian</label><br>
+                <select id="incidentSeverity" name="incidentSeverity">
+                    <option value="Total Loss">Kerugian Total</option>
+                    <option value="Major Damage">Kerugian Besar</option>
+                    <option value="Minor Damage">Kerugian Kecil</option>
+                    <option value="Trivial Damage">Kerugian Sangat Kecil</option>
+                </select>
+                <br/><br>
+                <label for="authoritiesContacted">Silahkan masukan jenis kerugian</label><br>
+                <select id="authoritiesContacted" name="authoritiesContacted">
+                    <option value="None">Tidak Ada</option>
+                    <option value="Police">Polisi</option>
+                    <option value="Fire">Pemadam Kebakaran</option>
+                    <option value="Ambulance">Ambulan</option>
+                    <option value="Other">Lainnya</option>
+                </select>
+                <br/><br>
+                <label for="MACG">Silahkan masukan kategori waktu premi aktif (Dalam bulan)</label><br>
+                <select id="MACG" name="MACG">
+                    <option value="0-50">0-50</option>
+                    <option value="51-100">51-100</option>
+                    <option value="101-150">101-150</option>
+                    <option value="151-200">151-200</option>
+                    <option value="201-250">201-250</option>
+                    <option value="251-300">251-300</option>
+                    <option value="301-350">301-350</option>
+                    <option value="351-400">351-400</option>
+                    <option value="401-450">401-450</option>
+                    <option value="451-500">451-500</option>
+                </select>
+                <br/><br>
+                <label for="PAPG">Silahkan masukan kategori waktu premi aktif (Dalam bulan)</label><br>
+                <select id="PAPG" name="PAPG">
+                    <option value="very low">Sangat Rendah</option>
+                    <option value="low">Rendah</option>
+                    <option value="medium">Sedang</option>
+                    <option value="high">Tinggi</option>
+                    <option value="very high">Sangat Tinggi</option>
+                </select>
+                <br/><br>
+                <input id="submit" type="submit" value="Submit">
+            </div>
+        </form>
+        <div id="output">
+            {% if output1 %} 
+                {{ output1 | safe}}
+            {% endif %}
+        </div>
+        <hr>
+        <div id="footerOuter">
+            <p> Nicholas Tanugroho | 71220845 </p> 
+        </div>
+    </div>
+    
+    <script>
+        // Set the minimum date to today's date
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('dateInput').setAttribute('min', today);
+    </script>
+</body>
+</html>
